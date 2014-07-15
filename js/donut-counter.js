@@ -1,15 +1,53 @@
-//JS Donut Counter Lab
+$(function(){ // When document is ready run the code below
 
-//declare 2 variables one for guests and one for donuts
-//use prompt method to bring up a dialog box in the browser for the user to insert the number of guests and donuts.
-//use parseInt to convert the users answer from a string to an integer.
-var guests = parseInt(prompt('How many guests at your party?'));
-var donuts = parseInt(prompt('How many donuts are there?'));
+  // create variables for guest count and donut count.
+  var guestCount = 0,
+      donutCount = 0,
+      $guestNum = $('#guests span'),
+      $donutNum = $('#donuts span'),
+      $status = $('#status'),
+      $guests = $('#guests'),
+      $donuts = $('#donuts'),
+      $check = $('#check');
+      
 
-//write a conditional to check if there are enough donuts
-if (donuts > guests) {
-  //alert the user a message telling them the numbers of donuts and guests and if there are enough or not.
-  alert('There are '+donuts+' donuts and '+guests+' guests which is plenty for all.');
-} else {
-  alert('Uh oh! There are '+donuts+' donuts and '+guests+' guests which is not enough!');
-}
+  // add event listeners for clicking buttons to add and remove guests.
+  $guests.find('button').eq(0).click(function(){
+    // increment guest count when clicked.
+    guestCount += 1;
+    // update the text of the guest number when clicked.
+    $guestNum.text(guestCount);
+  });
+
+  $guests.find('button').eq(1).click(function(){
+    if (guestCount > 0) {
+      guestCount -= 1;
+      $guestNum.text(guestCount);
+    }
+  });
+
+  // add event listeners for clicking buttons to add and remove donuts.
+  $donuts.find('button').eq(0).click(function(){
+    // increment donut count when clicked.
+    donutCount += 1;
+    // update the text of the donut number when clicked.
+    $donutNum.text(donutCount);
+  });
+
+  $donuts.find('button').eq(1).click(function(){
+    if (donutCount > 0) {
+      donutCount -= 1;
+      $donutNum.text(donutCount);
+    }
+  });
+
+  // add event listner for clicks on the check button.
+  $check.find('button').click(function(){
+    // when clicked update the text to display of guests are hungry when there are not enough donuts per guest and happy when there are enough donuts.
+    if (donutCount < guestCount) {
+      $status.text('Guests are hungry!');
+    } else {
+      $status.text('Guests are happy.');
+    }
+  });
+});

@@ -3,9 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+  <div class="wrapper">
+    <h1>Donut Party!</h1>
+    <h2 id="status"></h2>
+
+    <div id="guests">
+      <h3>Guests: <span>0</span></h3>
+      <button>+</button>
+      <button>-</button>
+    </div>
+
+    <div id="donuts">
+      <h3>Donuts: <span>0</span></h3>
+      <button>+</button>
+      <button>-</button>
+    </div>
+
+    <div id="check">
+      <button>Check</button>
+    </div>
+
+  </div><!-- .wrapper -->
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/donut-counter.js"></script>
 </body>
 </html>
