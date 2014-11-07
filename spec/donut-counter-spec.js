@@ -7,32 +7,32 @@ describe('DonutCounter', function() {
   describe('adding and subtracting buttons', function() {
     it('can add donuts', function() {
       $('#donuts button').first().click();
-      expect($('#donuts h3 span').text()).toBe(1);
+      expect($('#donuts h3 span').text()).toBe('1');
     });
 
     it('can remove donuts if there are more than zero', function() {
       $('#donuts button').first().click();
       $('#donuts button').first().click();
       $('#donuts button').last().click();
-      expect($('#donuts h3 span').text()).toBe(1);
+      expect($('#donuts h3 span').text()).toBe('1');
       $('#donuts button').last().click();
       $('#donuts button').last().click();
-      expect($('#donuts h3 span').text()).toBe(0);
+      expect($('#donuts h3 span').text()).toBe('0');
     });
 
     it('can add guests', function() {
       $('#guests button').first().click();
-      expect($('#guests h3 span').text()).toBe(1);
+      expect($('#guests h3 span').text()).toBe('1');
     });
 
     it('can remove guests if there are more than zero', function() {
       $('#guests button').first().click();
       $('#guests button').first().click();
       $('#guests button').last().click();
-      expect($('#guests h3 span').text()).toBe(1);
+      expect($('#guests h3 span').text()).toBe('1');
       $('#guests button').last().click();
       $('#guests button').last().click();
-      expect($('#guests h3 span').text()).toBe(0);
+      expect($('#guests h3 span').text()).toBe('0');
     });
   });
 
