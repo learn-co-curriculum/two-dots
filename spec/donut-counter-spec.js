@@ -38,7 +38,14 @@ describe('DonutCounter', function() {
 
   describe('calculating donuts to guests', function() {
     it('knows if there are too few donuts', function() {
+      $('#guests button').first().click();
+      $('#check').click();
       expect($('#status').text()).toBe('Guests are sad :(');
+    });
+
+    it('knows if there are no guests and no donuts', function() {
+      $('#check').click();
+      expect($('#status').text()).toBe('Invite someone you jerk!');
     });
 
     it('knows if there are no guests', function() {
