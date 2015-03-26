@@ -17,9 +17,9 @@ So like I said, it can be stressfull being a host to a donut party.  You need to
 ```shell
 # Install jasmine:
 gem sources -a http://flatiron:33west26@gems.flatironschool.com
-gem install ironboard
+gem install learn-co
 
 # Run Jasmine test suite:
-ironboard  # runs only in the terminal
-ironboard -b # runs also in the browser
+learn  # runs only in the terminal
+learn -b # runs also in the browser
 ```
