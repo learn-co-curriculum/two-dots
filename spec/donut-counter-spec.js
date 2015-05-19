@@ -7,7 +7,6 @@ describe('DonutCounter', function() {
   describe('adding and subtracting buttons', function() {
     it('can add donuts', function() {
       $('#donuts button').first().click();
-      debugger;
       expect($('#donuts h3 span').text()).toBe('1');
     });
 
