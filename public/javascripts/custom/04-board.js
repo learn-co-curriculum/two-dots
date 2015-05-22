@@ -10,7 +10,7 @@ function Board(width) {
   this.redrawTheseColumns = [];
 }
 
-Board.prototype.makeBoard = function() {
+Board.prototype.render = function() {
   var html = this.makeHTML();
   var that = this;
   $("#board").fadeOut(1000, function() {
@@ -22,10 +22,12 @@ Board.prototype.makeBoard = function() {
   });
 }
 
+Board.prototype.init = function() {
+  this.createBoard();
+  this.render();
+}
+
 Board.prototype.createNewDot = function(x) {
-  if (x < 0) {
-    debugger;
-  }
   var dot = this.makeDot(x, 0);
   var tempDots = this.dots;
   tempDots[x].unshift(dot);
@@ -134,38 +136,48 @@ Board.prototype.updateScore = function() {
 }
 
 Board.prototype.redrawColumns  = function() {
-  var that = this;
   this.redrawTheseColumns.forEach(function(x) {
-    var column = that.dots[x];
-    var newHTML = "";
-    column.forEach(function(dot) {
-      newHTML += dot.html();
-    });
-    $("#column-" + x).html(newHTML);
-  });
+    $("#column-" + x).html(this.drawColumn(x));
+  }, this);
+}
+Board.prototype.drawColumn = function(x) {
+  var column = this.dots[x];
+  var newHTML = "";
+  column.forEach(function(dot) {
+    newHTML += dot.html();
+  }, this);
+  return newHTML;
+}
+
+Board.prototype.addDotsToColumn = function(xAxis) {
+  var column = [];
+  for (var yAxis = 0; yAxis < this.width; yAxis++ ) {
+    var dot = this.makeDot(xAxis, yAxis);
+    column.push(dot);
+  }
+  this.dots.push(column);
+}
+
+Board.prototype.renderColumn = function(xAxis) {
+ var startHtml = "<div id=\"column-" + xAxis + "\" class=\"col-xs-" +  this.columnSize + " col-sm-" + this.columnSize + " col-md-" + this.columnSize + "\">";
+ var htmlEnd = "</div>";
+ return startHtml + this.drawColumn(xAxis) + htmlEnd;
 }
 
 Board.prototype.makeHTML = function() {
   var html = "<div class=\"row board\">";
   var htmlEnd = "</div>";
   for (var xAxis = 0; xAxis < this.width; xAxis++ ) {
-    html += this.makeColumn(xAxis);
+    html += this.renderColumn(xAxis);
   }
   return html + htmlEnd;
 };
 
-Board.prototype.makeColumn = function(xAxis) {
-  var html = "<div id=\"column-" + xAxis + "\" class=\"col-xs-" +  this.columnSize + " col-sm-" + this.columnSize + " col-md-" + this.columnSize + "\">";
-  var htmlEnd = "</div>";
-  var column = [];
-  for (var yAxis = 0; yAxis < this.width; yAxis++ ) {
-    var dot = this.makeDot(xAxis, yAxis);
-    column.push(dot);
-    html += dot.html();
+Board.prototype.createBoard = function() {
+  for (var xAxis = 0; xAxis < this.width; xAxis++ ) {
+    this.addDotsToColumn(xAxis);
   }
-  this.dots.push(column);
-  return html + htmlEnd;
-};
+}
 
 Board.prototype.makeDot = function(xAxis, yAxis) {
   var color = this.randomColor();
@@ -176,11 +188,10 @@ Board.prototype.makeDot = function(xAxis, yAxis) {
 
 Board.prototype.findDots = function(coords) {
   var foundDots = [];
-  var that = this;
   coords.forEach(function(coordinates) {
-    var found = that.findDot(coordinates);
+    var found = this.findDot(coordinates);
     if (found) foundDots.push(found);
-  });
+  }, this);
   return foundDots;
 }
 
