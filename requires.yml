@@ -2,7 +2,10 @@
 javascripts:
   files:
     - js/jquery-2.1.1.min.js
-    - js/donut-counter.js
+    - js/board.js
+    - js/dot.js
+    - js/helper-functions.js
+    - js/prevent-text-highlighting.js
   specs:
     - spec/jasmine-jquery.js
-    - spec/donut-counter-spec.js
+    - spec/board.spec.js
