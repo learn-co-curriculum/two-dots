@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/donut-counter.js"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <h1>Donut Party!</h1>
-    <h2 id="status"></h2>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="simple object-oriented JavaScript implementation of Two Dots">
+    <meta name="author" content="Katie Hoffman">
+    
+    <title>Two Dots</title>
+    <link rel="icon" href="public/images/icon-1.png">
 
-    <div id="guests">
-      <h3>Guests: <span class='guest-count'>0</span></h3>
-      <button class='add'>+</button>
-      <button class='remove'>-</button>
+    <link href="public/stylesheets/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="public/stylesheets/lib/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="public/stylesheets/custom/style.css" rel="stylesheet">
+  </head>
+  <body role="document">
+
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+        <h1>Two Dots</h1>
+        <p>This is a basic object-oriented implementation of Two Dots.</p>
+        <p>Score: <span id="score">0</span></p>
+      </div>
     </div>
 
-    <div id="donuts">
-      <h3>Donuts: <span class='donut-count'>0</span></h3>
-      <button class='add'>+</button>
-      <button class='remove'>-</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 noselect" id="board">
+          <i class="fa fa-cog fa-spin fa-5x"></i>
+          <p>Making snow...</p>
+        </div>
+      </div>
     </div>
-
-    <div id="check">
-      <button>Check</button>
-    </div>
-
-  </div><!-- .wrapper -->
-
-</body>
+    
+    <script src="public/javascripts/lib/jquery.min.js"></script>
+    <script src="public/javascripts/lib/bootstrap.min.js"></script>
+    <script src="public/javascripts/lib/underscore.js"></script>
+    <script src="public/javascripts/lib/backbone.js"></script>
+    <script src="public/javascripts/views/DotView.js"></script>
+    <script src="public/javascripts/models/dot.js"></script>
+    <script src="public/javascripts/custom/01-prevent-text-highlighting.js"></script>
+    <script src="public/javascripts/custom/02-helper-functions.js"></script>
+    <script src="public/javascripts/custom/03-dot.js"></script>
+    <script src="public/javascripts/custom/04-board.js"></script>
+    <script src="public/javascripts/custom/05-builder.js"></script>
+  </body>
 </html>

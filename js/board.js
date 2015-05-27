@@ -1,11 +1,3 @@
-$(function(){ 
-  var width = 6;
-	var board = new Board(width);
-	board.init();
-});
-
-// your code here
-
 function Board(width) {
   if (width > 12 || width < 2) alert("Board size must be between 2 and 12");
   this.width = width;
