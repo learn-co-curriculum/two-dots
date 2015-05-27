@@ -3,3 +3,4 @@ $(function(){
 	var board = new Board(width);
 	board.init();
 });
+
