@@ -1,7 +1,9 @@
 describe('DonutCounter', function() {
   beforeEach(function() {
-    setFixtures('<body role="document"> <div class="container theme-showcase" role="main"> <div class="jumbotron"> <h1>Two Dots</h1> <p>This is a basic object-oriented implementation of Two Dots.</p><p>Score: <span id="score">0</span></p></div></div><div class="container"> <div class="row"> <div class="col-md-6 col-md-offset-3 noselect" id="board"> <i class="fa fa-cog fa-spin fa-5x"></i> <p>Making snow...</p></div></div></div><script src="public/javascripts/lib/jquery.min.js"></script> <script src="public/javascripts/lib/bootstrap.min.js"></script> <script src="public/javascripts/lib/underscore.js"></script> <script src="public/javascripts/lib/backbone.js"></script> <script src="public/javascripts/views/DotView.js"></script> <script src="public/javascripts/models/dot.js"></script> <script src="public/javascripts/custom/01-prevent-text-highlighting.js"></script> <script src="public/javascripts/custom/02-helper-functions.js"></script> <script src="public/javascripts/custom/03-dot.js"></script> <script src="public/javascripts/custom/04-board.js"></script> <script src="public/javascripts/custom/05-builder.js"></script> </body>');
-    var donutCounter = new DonutCounter();
+    setFixtures('<body role="document"><div class="container theme-showcase" role="main"><div class="jumbotron"><h1>Two Dots</h1><p>This is a basic object-oriented implementation of Two Dots.</p><p>Score: <span id="score">0</span></p></div></div><div class="container"><div class="row"><div class="col-md-6 col-md-offset-3 noselect" id="board"><i class="fa fa-cog fa-spin fa-5x"></i><p>Making snow...</p></div></div></div></body>');
+    var width = 6;
+    var board = new Board(width);
+    board.init();
   });
 
   describe('adding and subtracting buttons', function() {

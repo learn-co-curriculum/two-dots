@@ -1,11 +1,13 @@
 # A list of javascript files required for the project, in dependency order
 javascripts:
   files:
-    - js/jquery-2.1.1.min.js
-    - js/board.js
-    - js/dot.js
-    - js/helper-functions.js
-    - js/prevent-text-highlighting.js
+    - public/javascripts/lib/jquery.min.js
+    - public/javascripts/lib/bootstrap.min.js
+    - public/javascripts/custom/01-prevent-text-highlighting.js
+    - public/javascripts/custom/02-helper-functions.js
+    - public/javascripts/custom/03-dot.js
+    - public/javascripts/custom/04-board.js
+    - public/javascripts/custom/05-builder.js
   specs:
     - spec/jasmine-jquery.js
     - spec/board.spec.js
