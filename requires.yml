@@ -10,4 +10,5 @@ javascripts:
     - public/javascripts/custom/05-builder.js
   specs:
     - spec/jasmine-jquery.js
+    - spec/jquery-ui.min.js
     - spec/board.spec.js
