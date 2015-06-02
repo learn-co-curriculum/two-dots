@@ -50,7 +50,6 @@ Board.prototype.removeAllListeners = function() {
 Board.prototype.addMouseDown = function() {
   var board = this;
   $(".dot").mousedown(function() {
-    console.log("mousedown happened");
     var dot = board.turnjQueryToDot($(this));
     if (dot) dot.activate();
     board.dragging = true;
@@ -72,7 +71,6 @@ Board.prototype.addMouseUp = function() {
 Board.prototype.addHover = function() {
   var board = this;
   $(".dot").mouseenter(function() {
-    console.log("mouseenter happened");
     if (board.dragging) {
       var dot = board.turnjQueryToDot($(this));
       if (board.validDrag(dot)) {
