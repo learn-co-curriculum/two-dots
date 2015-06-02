@@ -11,4 +11,4 @@ javascripts:
   specs:
     - spec/jasmine-jquery.js
     - spec/jquery-ui.min.js
-    - spec/board.spec.js
+    - spec/two-dots.spec.js

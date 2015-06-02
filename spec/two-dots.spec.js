@@ -34,7 +34,7 @@ describe('TwoDots', function() {
     });
   });
 
-  describe('#validDrag', function() {
+  describe('valid move', function() {
     it('should change dots accordingly if a valid horizontal move is made', function() {
       var first = $('[data-xaxis="1"][data-yaxis="1"]');
       var second = $('[data-xaxis="2"][data-yaxis="1"]');
@@ -69,7 +69,7 @@ describe('TwoDots', function() {
     });
   });
 
-  describe('invalidDrag', function() {
+  describe('invalid drag', function() {
     it('should not change dots if selected dot colors do not match', function() {
       var dotObjBefore = board.findDot([1,1]);
       var first = $('[data-xaxis="1"][data-yaxis="1"]');
@@ -97,7 +97,7 @@ describe('TwoDots', function() {
     });
   });
 
-  describe('#updateScore', function(){
+  describe('updating the score', function(){
     it('should increment score by number of selected dots in a valid move', function(){
       $('[data-xaxis="1"][data-yaxis="3"]').mousedown();
       $('[data-xaxis="2"][data-yaxis="3"]').mouseenter();
