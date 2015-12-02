@@ -17,3 +17,5 @@ gem install learn-co
 learn  # runs only in the terminal
 learn -b # runs also in the browser
 ```
+
+<a href='https://learn.co/lessons/two-dots' data-visibility='hidden'>View this lesson on Learn.co</a>
